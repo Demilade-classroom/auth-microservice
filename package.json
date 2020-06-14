@@ -1,0 +1,35 @@
+{
+  "name": "auth-micro",
+  "version": "1.0.0",
+  "description": "An authentication microservice for applications",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [
+    "authentication",
+    "node",
+    "express",
+    "mongodb",
+    "microservice"
+  ],
+  "author": "Jimoh Rildwan A",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.5.0",
+    "helmet": "^3.23.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.18",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
