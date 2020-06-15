@@ -1,5 +1,5 @@
 # auth-microservice
-An authentication microservice for various applications
+A microservice that authenticates various applications
 
 ## Getting Started
 - git clone or fork [this repo](https://github.com/neymarjimoh/auth-microservice.git)
