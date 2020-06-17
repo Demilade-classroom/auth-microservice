@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+       - "5555:5555"
+    depends_on:
+    - mongo
+    env_file: .env
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
+    volumes: 
+    - mongo-volume:/data/db
+volumes: 
+  mongo-volume:

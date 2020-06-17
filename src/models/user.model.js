@@ -5,17 +5,20 @@ const { Schema } = mongoose;
 const userSchema = new Schema(
     {
         app_name: {
-            type: String,
+            type: Schema.Types.ObjectId,
             required: true,
         }, 
+        app_nice_name: String,
         username: {
             type: String,
-            required: true,
             unique: true,
+            trim: true,
+            minlength: 4,
         },
         password: {
             type: String,
             required: true,
+            minlength: 6,
         },
         email: {
             type: String,
@@ -24,7 +27,8 @@ const userSchema = new Schema(
         },
         fullname: {
             type: String,
-            required: true
+            required: true,
+            trim: true,
         },
         phoneNumber: {
             type: String,

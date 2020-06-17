@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 const config = require('../config');
 
-exports.sendMail = (to, subject, msg) => {
+exports.sendMail = (from, to, subject, msg) => {
     return new Promise((resolve, reject) => {
         const smtpTransport = nodemailer.createTransport({
             host: config.MAIL_HOST,
@@ -23,7 +23,7 @@ exports.sendMail = (to, subject, msg) => {
         });
   
         const mailOptions = {
-            from: '"Auth-MS 👻" <auth-ms@outlook.com>',
+            from: from,
             to: to,
             subject: subject,
             text: msg,
