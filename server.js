@@ -25,7 +25,7 @@ app.get('/api/v1', (req, res) => {
     `);
 });
 
-app.use(checkAppAdmin);
+// app.use(checkAppAdmin);
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/app', appRoutes);

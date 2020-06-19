@@ -4,7 +4,7 @@ const config = require('../config');
 
 // only logged in users that are admins to that app
 module.exports = (req, res, next) => {
-    if (routes.adminOnlyRoutes.includes(req.path)) {
+    // if (routes.adminOnlyRoutes.includes(req.path)) {
         if (!req.headers.authorization) {
             return res.status(412).json({
                 error: true,
@@ -34,7 +34,8 @@ module.exports = (req, res, next) => {
 			});
         }
         
-    } else {
-        next();
-    }
+    // } else {
+    //     next();
+    // }
 };
+ 

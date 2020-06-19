@@ -17,12 +17,15 @@ exports.registerApp = async (req, res) => {
             app_unique_key,
         });
         const savedApp = await app.save();
-        // const token = jwt.sign(
-        //     { 
-        //         appId: savedApp._id 
-        //     },
-        //     config.JWT_SECRET,
-        // );
+        const token = jwt.sign(
+            { 
+                appId: savedApp._id 
+            },
+            config.JWT_SECRET,
+            {
+                expiresIn: '365d'
+            }
+        );
         return res.status(201).json({
             message: 'Application added successfully',
             app,

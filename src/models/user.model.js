@@ -5,13 +5,12 @@ const { Schema } = mongoose;
 const userSchema = new Schema(
     {
         app_name: {
-            type: Schema.Types.ObjectId,
+            type: String,
             required: true,
         }, 
         app_nice_name: String,
         username: {
             type: String,
-            unique: true,
             trim: true,
             minlength: 4,
         },
@@ -22,7 +21,6 @@ const userSchema = new Schema(
         },
         email: {
             type: String,
-            unique: true,
             trim: true,
         },
         fullname: {
