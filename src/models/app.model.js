@@ -22,6 +22,7 @@ const appSchema = new Schema(
             default: 'username',
         },
         token: String,
+        expires_on: String,
         users: [
             {
                 type: Schema.Types.ObjectId,
