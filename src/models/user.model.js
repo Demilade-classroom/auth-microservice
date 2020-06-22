@@ -6,7 +6,6 @@ const userSchema = new Schema(
     {
         app_name: {
             type: String,
-            required: true,
         }, 
         app_nice_name: String,
         username: {
@@ -31,7 +30,6 @@ const userSchema = new Schema(
         phoneNumber: {
             type: String,
         },
-        token: String,
         verificationToken: String,
         role: {
             type: String,

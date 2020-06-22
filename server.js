@@ -5,7 +5,8 @@ const config = require('./src/config');
 const initDB = require('./src/config/dbconfig');
 const authRoutes = require('./src/routes/auth.route');
 const appRoutes = require('./src/routes/app.route');
-const checkAppAdmin = require('./src/middlewares/isAppAdmin');
+const accessToApp = require('./src/middlewares/checkApp');
+const checkAuth = require('./src/middlewares/checkAuth');
 const app = express();
 
 initDB(); // connects to db
@@ -25,7 +26,8 @@ app.get('/api/v1', (req, res) => {
     `);
 });
 
-// app.use(checkAppAdmin);
+app.use(accessToApp);
+app.use(checkAuth);
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/app', appRoutes);
