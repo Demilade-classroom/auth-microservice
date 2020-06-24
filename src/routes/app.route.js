@@ -7,6 +7,6 @@ const {
 } = require('../validation/app_register.validation');
 
 appRouter.post('/register', appRegisterValidationRules(), appValidate, appController.registerApp);
-appRouter.get('/:app_name', appController.getApp);
+appRouter.get('/details', appController.getApp);
 
 module.exports = appRouter;
